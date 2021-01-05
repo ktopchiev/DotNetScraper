@@ -75,11 +75,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScrapper\\DotNetScrapper.csproj",
-      "projectName": "DotNetScrapper",
-      "projectPath": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScrapper\\DotNetScrapper.csproj",
+      "projectUniqueName": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScraper\\DotNetScraper.csproj",
+      "projectName": "DotNetScraper",
+      "projectPath": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScraper\\DotNetScraper.csproj",
       "packagesPath": "C:\\Users\\karlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScrapper\\obj\\",
+      "outputPath": "C:\\Users\\karlo\\Desktop\\RiderSolutions\\DotNetScrapper\\DotNetScraper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

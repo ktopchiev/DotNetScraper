@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using HtmlAgilityPack;
 
-public class Program
+public class DotNetScraper
 {
 	public static void Main()
 	{
@@ -44,7 +44,7 @@ public class Program
 	{
 		var title = htmlNode.InnerText.CleanParsedText();
 		var neshtosi = htmlNode.Attributes;
-		//TODO:
+		//TODO: Finish date and time data
 		//var date = htmlNode.SelectSingleNode(".//span[@class='runtime']").InnerText.CleanParsedText();
 		//var time = htmlNode.SelectSingleNode(".//span[@class='genre']").InnerText.CleanParsedText();
 		

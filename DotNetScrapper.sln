@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetScrapper", "DotNetScrapper\DotNetScrapper.csproj", "{F609AC9C-DD13-447B-8F05-92222AF67641}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetScraper", "DotNetScraper\DotNetScraper.csproj", "{F609AC9C-DD13-447B-8F05-92222AF67641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
