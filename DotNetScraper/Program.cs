@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using HtmlAgilityPack;
@@ -20,22 +22,49 @@ public class DotNetScraper
 			doc.LoadHtml(html);
 
 			var xpath = "//li[@class='lecture col-md-6 col-sm-12 visible-lg visible-md']";
+			var xpathA = "//li[@class='lecture col-md-6 col-sm-12 visible-lg visible-md']/a";
+			
 			var topicNodes = doc.DocumentNode.SelectNodes(xpath);
+			var liNodes = doc.DocumentNode.SelectNodes(xpathA);
 			
-			var topics = new List<string>();
+			var topics = new Dictionary<string, Dictionary<int, string>>();
 			
-			//Do all topics
+			//Do all topics and their Id
 			for (int i = 0; i < topicNodes.Count; i++)
 			{
 				var topic = ParseTopicUsingXpath(topicNodes[i]);
-
-				topics.Add(topic.Title.ToUpper());
+				
+				//Get the lecture id
+				var attribute = liNodes[i].Attributes.FirstOrDefault(x => x.Name == "data-id");
+				var idOfTopic = int.Parse(attribute.Value.Trim());
+				var topicData = new Dictionary<int, string>();
+				
+				
+				
+				topicData.Add(idOfTopic, string.Empty);
+				topics.Add(topic.Title.ToUpper(), topicData);
 			}
-			
+
 			Console.WriteLine("Parsed topics are:\n");
-			Console.WriteLine(string.Join("\n", topics));
-			
-			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\Topics.txt", string.Join("\n", topics));
+			Console.WriteLine(string.Join("\n", topics.Keys));
+
+			StringBuilder sb = new StringBuilder();
+
+			foreach (var topic in topics)
+			{
+				sb.Append(topic.Key).Append(" ");
+
+				foreach (var data in topic.Value)
+				{
+					sb.Append(data.Key).Append(" ");
+					sb.Append(data.Value);
+				}
+
+				sb.AppendLine();
+			}
+
+			Console.WriteLine(sb.ToString());
+			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\Topics.txt", sb.ToString());
 		}		
 	}
 	
