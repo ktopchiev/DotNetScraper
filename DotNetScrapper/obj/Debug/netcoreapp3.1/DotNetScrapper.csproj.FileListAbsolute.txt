@@ -1,0 +1,15 @@
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.exe
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.deps.json
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.runtimeconfig.json
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.runtimeconfig.dev.json
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.dll
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\DotNetScrapper.pdb
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.csprojAssemblyReference.cache
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.AssemblyInfoInputs.cache
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.AssemblyInfo.cs
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.csproj.CoreCompileInputs.cache
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.csproj.CopyComplete
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.dll
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.pdb
+C:\Users\karlo\Desktop\RiderSolutions\DotNetScrapper\DotNetScrapper\obj\Debug\netcoreapp3.1\DotNetScrapper.genruntimeconfig.cache
