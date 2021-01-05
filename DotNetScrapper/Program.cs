@@ -28,8 +28,7 @@ public class Program
 			for (int i = 0; i < topicNodes.Count; i++)
 			{
 				var topic = ParseTopicUsingXpath(topicNodes[i]);
-				//topic can also be parsed by traversing node tree like node.ChildNodes[0]....
-				
+
 				topics.Add(topic.Title.ToUpper());
 			}
 			
