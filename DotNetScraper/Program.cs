@@ -76,6 +76,7 @@ public class DotNetScraper
 
 			Console.WriteLine(sb.ToString());
 			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\Topics.txt", sb.ToString());
+			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\htmlOfTopics.html", html);
 		}		
 	}
 	
