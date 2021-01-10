@@ -2,6 +2,7 @@
 using System.Net;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -23,9 +24,11 @@ public class DotNetScraper
 
 			var xpath = "//li[@class='lecture col-md-6 col-sm-12 visible-lg visible-md']";
 			var xpathA = "//li[@class='lecture col-md-6 col-sm-12 visible-lg visible-md']/a";
-			
+			var xpathLectureDetailsContainer = "//li[@class='col-md-12 lecture-details-container']";
+
 			var topicNodes = doc.DocumentNode.SelectNodes(xpath);
 			var liNodes = doc.DocumentNode.SelectNodes(xpathA);
+			var lectureDetailsNode = doc.DocumentNode.SelectNodes(xpathLectureDetailsContainer);
 			
 			var topics = new Dictionary<string, Dictionary<int, string>>();
 			
@@ -35,11 +38,20 @@ public class DotNetScraper
 				var topic = ParseTopicUsingXpath(topicNodes[i]);
 				
 				//Get the lecture id
-				var attribute = liNodes[i].Attributes.FirstOrDefault(x => x.Name == "data-id");
-				var idOfTopic = int.Parse(attribute.Value.Trim());
+				var lectureAttribute = liNodes[i].Attributes.FirstOrDefault(x => x.Name == "data-id");
+				var idOfTopic = int.Parse(lectureAttribute.Value.Trim());
 				var topicData = new Dictionary<int, string>();
 				
-				
+				//Get the lecture details id
+				var detailsAttribute = lectureDetailsNode[i].ChildNodes.FindFirst("div").Id;
+				var idOfDetails = int.Parse(detailsAttribute.Substring(7).Trim());
+
+				if (idOfDetails == idOfTopic)
+				{
+					var details = doc.DocumentNode.SelectNodes($"//*[@id='lesson-{idOfDetails}']");
+					// var detailsChild = details.ChildNodes.FindFirst("div");
+					//TODO: CANNOT ACCESS THE CHILDREN OF DETAILS CONTAINER
+				}
 				
 				topicData.Add(idOfTopic, string.Empty);
 				topics.Add(topic.Title.ToUpper(), topicData);
@@ -72,7 +84,6 @@ public class DotNetScraper
 	public static Topic ParseTopicUsingXpath(HtmlNode htmlNode)
 	{
 		var title = htmlNode.InnerText.CleanParsedText();
-		var neshtosi = htmlNode.Attributes;
 		//TODO: Finish date and time data
 		//var date = htmlNode.SelectSingleNode(".//span[@class='runtime']").InnerText.CleanParsedText();
 		//var time = htmlNode.SelectSingleNode(".//span[@class='genre']").InnerText.CleanParsedText();
@@ -100,8 +111,8 @@ public class DotNetScraper
 			//Time = time
 		};
 	}
-	
-		
+
+
 	public class Topic
 	{
 		public string Title {get ; set;}
