@@ -44,12 +44,13 @@ public class DotNetScraper
 				//Get the lecture details id
 				var detailsAttribute = lectureDetailsNode[i].ChildNodes.FindFirst("div").Id;
 				var idOfDetails = int.Parse(detailsAttribute.Substring(7).Trim());
-
+				
+				//Get date and time by id
 				if (idOfDetails == idOfTopic)
 				{
 					var details = doc.DocumentNode.SelectNodes($"//*[@id='lesson-{idOfDetails}']");
 					// var detailsChild = details.ChildNodes.FindFirst("div");
-					//TODO: CANNOT ACCESS THE CHILDREN OF DETAILS CONTAINER
+					//TODO: CANNOT ACCESS THE CHILDREN OF DETAILS CONTAINER!!!
 				}
 				
 				topicData.Add(idOfTopic, string.Empty);
@@ -57,25 +58,11 @@ public class DotNetScraper
 			}
 
 			Console.WriteLine("Parsed topics are:\n");
-			Console.WriteLine(string.Join("\n", topics.Keys));
 
-			StringBuilder sb = new StringBuilder();
-
-			foreach (var topic in topics)
-			{
-				sb.Append(topic.Key).Append(" ");
-
-				foreach (var data in topic.Value)
-				{
-					sb.Append(data.Key).Append(" ");
-					sb.Append(data.Value);
-				}
-
-				sb.AppendLine();
-			}
-
-			Console.WriteLine(sb.ToString());
-			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\Topics.txt", sb.ToString());
+			var str = DataToString(topics);
+			Console.WriteLine(str);
+			
+			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\Topics.txt", str);
 			System.IO.File.WriteAllText(@"C:\Users\karlo\Desktop\htmlOfTopics.html", html);
 		}		
 	}
@@ -110,6 +97,26 @@ public class DotNetScraper
 			//Date = date,
 			//Time = time
 		};
+	}
+
+	public static string DataToString(Dictionary<string,Dictionary<int, string>> topics)
+	{
+		StringBuilder sb = new StringBuilder();
+
+		foreach (var topic in topics)
+		{
+			sb.Append(topic.Key).Append(" ");
+
+			foreach (var data in topic.Value)
+			{
+				sb.Append(data.Key).Append(" ");
+				sb.Append(data.Value);
+			}
+
+			sb.AppendLine();
+		}
+
+		return sb.ToString();
 	}
 
 
